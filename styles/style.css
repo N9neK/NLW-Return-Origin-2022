@@ -1,5 +1,4 @@
-/* ==========BASE STYLE========== */
-
+/* ========== BASE STYLE ========== */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
 
 :root {
@@ -9,6 +8,8 @@
 
   --brand-beige: #fffaf0;
   --brand-light: #dce9e3;
+
+  --brand-button-hover: #00453a;
 
   --bg-light: #f7f9f9;
 
@@ -90,7 +91,41 @@ section .content p {
   color: var(--secondary-paragraph);
 }
 
-/* ==========NAVIGATION========== */
+.button {
+  border: none;
+  border-radius: 1rem 3rem 1rem 3rem;
+  margin-bottom: 4rem;
+
+  /* height: 6.2rem;
+  width: 26.3rem;
+  margin-left: auto;
+  margin-right: auto; */
+
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  text-decoration: none;
+
+  background: var(--primary-color);
+
+  transition: background 250ms;
+}
+
+.button:hover {
+  background-color: var(--brand-button-hover);
+}
+
+/* ========== NAVIGATION ========== */
 nav {
   display: flex;
 
@@ -128,7 +163,7 @@ nav button {
   cursor: pointer;
 }
 
-/* ==========MENU-EXPANDED LATERAL========== */
+/* ========== MENU-EXPANDED LATERAL ========== */
 body.menu-expanded {
   overflow: hidden;
 }
@@ -210,6 +245,13 @@ body.menu-expanded .menu {
   background: white;
 }
 
+.menu .button:hover {
+  background-color: var(--brand-button-hover);
+  color: var(--brand-beige);
+
+  transition: 300ms;
+}
+
 .social-links {
   display: flex;
   align-items: center;
@@ -231,7 +273,7 @@ body.menu-expanded .button path {
   stroke: white;
 }
 
-/* ==========#HOME========== */
+/* ========== #HOME ========== */
 #home {
   padding-top: calc(4.1rem + var(--nav-height));
 }
@@ -275,8 +317,9 @@ body.menu-expanded .button path {
   color: var(--secondary-paragraph);
 }
 
-#home button {
-  border: none;
+#home .button {
+  margin-inline: auto;
+  /* border: none;
   border-radius: 1rem 3rem 1rem 3rem;
   margin-bottom: 2rem;
 
@@ -295,7 +338,7 @@ body.menu-expanded .button path {
   justify-content: center;
   gap: 1.6rem;
 
-  background: var(--primary-color);
+  background: var(--primary-color); */
 }
 
 #home img {
@@ -339,7 +382,7 @@ body.menu-expanded .button path {
   color: var(--primary-color);
 }
 
-/* ==========SERVICES========== */
+/* ========== SERVICES ========== */
 #services header h4 {
   margin-bottom: 1.6rem;
 
@@ -383,7 +426,7 @@ body.menu-expanded .button path {
   margin-block: 1.6rem;
 }
 
-/* ==========ABOUT========== */
+/* ========== ABOUT ========== */
 #about {
   text-align: left;
 
@@ -397,4 +440,77 @@ body.menu-expanded .button path {
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+
+/* ========== CONTACT ========== */
+#contact {
+  text-align: left;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--brand-beige);
+
+  padding-block: 6rem;
+
+  text-align: center;
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+footer .logo svg {
+  width: 23.6rem;
+  height: 3.1rem;
+}
+
+footer .logo path {
+  fill: white;
+}
+
+footer p {
+  line-height: 2;
+
+  margin-bottom: 3.2rem;
+}
+
+/* ========== BUTTON BACK TO TOP ========== */
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(100%);
+  transition: 400ms;
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
 }
