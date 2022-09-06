@@ -145,7 +145,7 @@ nav .wrapper {
   justify-content: space-between;
 }
 
-nav.scroll {
+.scroll {
   background-color: var(--primary-color);
 }
 
